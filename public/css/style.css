@@ -1,0 +1,31 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #c6e2ff;
+}
+main {
+    flex: 1;
+}
+
+.btn-primary{
+    background-color: #4ABDFF !important;
+    border-color: #4ABDFF !important;
+}
+
+.card-hover {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.scrollable-container {
+    max-height: 80vh;
+    overflow-y: auto !important;
+}
