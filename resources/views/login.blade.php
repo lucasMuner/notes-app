@@ -7,8 +7,8 @@
                 <div class="card shadow p-5" style="background-color: #ffffff;">
                     
                     <!-- logo -->
-                    <div class="text-center p-6">
-                        <img src="assets/logo.png" alt="Notes logo" class="img-fluid w-100" style="max-width: 110px;">
+                    <div class="text-center p-6 mb-5 mt-4">
+                        <img src="{{ asset('assets/images/logo_notes.png') }}" alt="Notes logo" class="img-fluid w-100" style="max-width: 250px;">
                     </div>
 
                     <!-- form -->
@@ -16,7 +16,7 @@
                         <div class="col-md-10 col-12">
                             <form action="/login-submit" method="post" novalidate>
                                 @csrf
-                                <div class="mb-3">
+                                <div class="mb-3 mt-3">
                                     <label class="form-label" for="text_username">E-mail</label>
                                     <input type="email" class="form-control" name="username" placeholder="Digite o seu usuário" value="{{ old('username') }}" required>
                                     {{-- error input --}}
@@ -26,14 +26,14 @@
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label" for="text_password">Senha</label>
-                                    <input type="text" class="form-control" name="password" placeholder="Digite a sua senha" value="{{ old('password') }}" required>
+                                    <input type="password" class="form-control" name="password" placeholder="Digite a sua senha" value="{{ old('password') }}" required>
                                     {{-- error input --}}
                                     @error('password')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                                 <div class="mb-3 text-center">
-                                    <button type="password" style="background-color: #4ABDFF;" class="btn text-white" id="btn_login"><i class="fa fa-sign-in"></i> Login</button>
+                                    <button type="submit" class="btn btn-primary text-white" id="btn_login"><i class="fa fa-sign-in"></i> Login</button>
                                 </div>
                             </form>
 
