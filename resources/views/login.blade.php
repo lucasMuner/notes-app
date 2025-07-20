@@ -36,7 +36,14 @@
                                     <button type="password" style="background-color: #4ABDFF;" class="btn text-white" id="btn_login"><i class="fa fa-sign-in"></i> Login</button>
                                 </div>
                             </form>
-                             <div class="mt-5 container fs-6 text-center">
+
+                            @if(session('loginError'))
+                                <div class="alert alert-danger text-center">
+                                    {{ session('loginError') }}
+                                </div>
+                            @endif
+
+                            <div class="mt-5 container fs-6 text-center">
                                 &copy; {{ date('Y') }} Notes.
                             </div>
 
