@@ -9,7 +9,7 @@
             </div>
         </div>
 
-        <div class="mt-3 scrollable-container">
+        <div class="mt-3 mb-3 scrollable-container">
             @if(count($notes) !== 0)
                 @foreach ($notes as $note)
                     @include('note')

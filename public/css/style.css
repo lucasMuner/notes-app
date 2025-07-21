@@ -29,3 +29,10 @@ main {
     max-height: 80vh;
     overflow-y: auto !important;
 }
+
+textarea {
+    min-height: 250px;
+    max-height: 250px;
+    min-width: 200px;
+    resize: none;
+}
