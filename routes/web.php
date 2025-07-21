@@ -10,6 +10,10 @@ use App\Http\Middleware\CheckIfNotLogged;
 Route::middleware([CheckIfNotLogged::class])->group(function() {
     Route::get('/login', [AuthController::class, 'login'])->name('login');
     Route::post('/login-submit', [AuthController::class, 'loginSubmit'])->name('login-submit');
+
+    //register
+    Route::get('/register', [AuthController::class, 'register'])->name('register');
+    Route::post('/register-submit', [AuthController::class, 'registerSubmit'])->name('register-submit');
 });
 
 Route::middleware([CheckIfLogged::class])->group(function() {
