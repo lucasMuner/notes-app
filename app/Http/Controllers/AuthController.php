@@ -73,4 +73,37 @@ class AuthController extends Controller
         session()->forget('user');
         return redirect()->to('/login');
     }
+
+    public function register()
+    {
+        return view('register');
+    }
+
+    public function registerSubmit(Request $request)
+    {
+        $request->validate(
+            [
+                'username' => ['required','email'],
+                'password' => ['required','min:6','max:16']
+            ],
+            [
+                'username.required' => 'O email é obrigatório!',
+                'username.email' => 'Email inválido!',
+                'password.required' => 'A senha é obrigatória!',
+                'password.min' => 'A senha não pode ter menos de :min caractéres!',
+                'password.max' => 'A senha não pode ter mais de :max caractéres!'
+            ]
+        );
+
+        $username = $request->input('username');
+        $password = $request->input('password');
+
+        $user = new User();
+        $user->username = $username;
+        $user->password = bcrypt($password);
+        $user->last_login = date('Y-m-d H:i:s');
+        $user->save();
+
+        return redirect()->route('login');
+    }
 }

@@ -13,7 +13,7 @@
     </head>
     <body>
         {{-- Header --}}
-        @if(!Request::is('login'))
+        @if(!Request::is('login') && !Request::is('register'))
             @include('navbar')
         @endif
 
@@ -23,7 +23,7 @@
         </main>
 
         {{-- Footer --}}
-        @if(!Request::is('login'))
+        @if(!Request::is('login') && !Request::is('register'))
             @include('footer')
         @endif
         

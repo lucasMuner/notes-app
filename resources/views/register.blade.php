@@ -14,7 +14,7 @@
                     <!-- form -->
                     <div class="row justify-content-center">
                         <div class="col-md-10 col-12">
-                            <form action="{{ route('login-submit') }}" method="post" novalidate>
+                            <form action="{{ route('register-submit') }}" method="post" novalidate>
                                 @csrf
                                 <div class="mb-3 mt-3">
                                     <label class="form-label" for="text_username">E-mail</label>
@@ -33,33 +33,15 @@
                                     @enderror
                                 </div>
                                 <div class="mb-1 text-center">
-                                    <button type="submit" class="btn btn-primary text-white" id="btn_login"><i class="fa fa-sign-in"></i> Login</button>
-                                </div>
-                                <div class="d-flex justify-content-center mt-2">
-                                    <a href="{{ route('register') }}">Cadastrar-se</a>
+                                    <button type="submit" class="btn btn-primary text-white" id="btn_login"><i class="fa fa-sign-in"></i> Registar</button>
                                 </div>
                             </form>
 
                             @if(session('loginError'))
-                                <div class="alert alert-danger text-center mt-3">
+                                <div class="alert alert-danger text-center">
                                     {{ session('loginError') }}
                                 </div>
-                            @endif
-
-                            <div class="mt-5 container fs-6 text-center">
-                                &copy; {{ date('Y') }} Notes.
-                            </div>
-
-                            {{-- error --}}
-                            {{-- @if($errors->any())
-                                <div class="alert alert-danger mt-3">
-                                    <ul class="m-0">
-                                        @foreach($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif  --}}
+                            @endif  
                         </div>
                     </div>
 
